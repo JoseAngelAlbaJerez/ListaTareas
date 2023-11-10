@@ -1,66 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# UI Instalación
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Estos comandos están relacionados con el framework de desarrollo web Laravel y se utilizan para facilitar la configuración inicial de un proyecto. Aquí hay una explicación detallada de cada comando:
 
-## About Laravel
+1. **Instalación del paquete laravel/ui:**
+   ```bash
+   composer require laravel/ui
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este comando utiliza Composer, el administrador de dependencias de PHP, para instalar el paquete laravel/ui. Este paquete proporciona algunas herramientas para generar vistas y recursos de frontend (como estilos y scripts) en proyectos Laravel.
+Generación de archivos de Bootstrap con 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Autenticación:
+2. **Creacion de authenticathor con ui y vite:**
+   ```bash
+    php artisan ui bootstrap --auth
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### php artisan ui bootstrap:
+ Genera archivos de recursos de frontend para el framework Bootstrap en tu aplicación Laravel. Creará archivos de diseño, estilos y scripts necesarios para utilizar Bootstrap en el frontend de tu aplicación.
 
-## Learning Laravel
+### --auth:
+ Modificador adicional que indica a Laravel que también debe generar vistas y controladores para la autenticación de usuarios, creando las páginas y controladores necesarios para la funcionalidad de registro e inicio de sesión.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Estos comandos resultan en la creación de 2 botones en la vista "welcome" y varias vistas.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Login
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<img src="img\login.png">
 
-## Laravel Sponsors
+## Register
+<img src="img\register.png">
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Archivos Generados o Modificados:
 
-## Contributing
+#### Modelos:
+<ul>
+<li>App/Models/Task.php: Modelo para las tareas en la aplicación.
+</li>
+<li>App/Models/User.php: Modelo para los usuarios de la aplicación.</li>
+</ul>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Configuración de Base de Datos:
+.env: Archivo de configuración de la base de datos.
 
-## Code of Conduct
+#### Migraciones:
+<ul>
+<li> database/migrations/2023_10_22_141245_create_tarea_table.php: Migración para la creación de la tabla de tareas en la base de datos.</li>
+</ul>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Controladores:
+<ul>
+<li> App/Http/Controllers/HomeController: Controlador principal de la página de inicio.
+</li>
+<li>App/Http/Controllers/TaskController: Controlador para la gestión de tareas.
+</li>
+</ul>
 
-## Security Vulnerabilities
+#### Rutas:
+<ul>
+<li>routes/web.php: Archivo de definición de rutas para la aplicación.</li></ul>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Vistas:
 
-## License
+### resources/views/home.blade.php: Vista para la página de inicio.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<img src="img/home.png">
+ 
+### resources/views/welcome.blade.php: Vista de bienvenida.
+
+<img src="img/welcome.png">
+
+### resources/views/task/create.blade.php: Vista para la creación de tareas.
+
+<img src="img/create.png">
+
+### resources/views/task/edit.blade.php: Vista para la edición de tareas.
+
+<img src="img/edit.png">
+
+#### Archivos Relacionados a Middleware y Autenticación (no presentados):
+<ul>
+<li>App/Http/Middleware</li>
+<li>App/Http/Controllers/Auth</li>
+<li>resources/views/auth</li>
+</ul>
