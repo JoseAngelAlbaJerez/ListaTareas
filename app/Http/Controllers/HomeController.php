@@ -13,6 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        //Inicializa el middleware de autenticacion de ui
         $this->middleware('auth');
     }
 
@@ -25,7 +26,10 @@ class HomeController extends Controller
      */
     public function index()
 {
+    //Toma todas las tareas del Modelo de Tareas
     $tasks = Task::all();
+
+    //Devuelve la vista 'home', pasando las tareas sacadas de modelo como datos
     return view('home', ['tasks' => $tasks]);
 }
    
