@@ -62,13 +62,15 @@ Generación de archivos de Bootstrap con
 
 ## Vistas:
 
-### resources/views/home.blade.php: Vista para la página de inicio.
 
-<img src="img/home.png">
  
 ### resources/views/welcome.blade.php: Vista de bienvenida.
 
 <img src="img/welcome.png">
+
+### resources/views/home.blade.php: Vista para la página de inicio.
+
+<img src="img/home.png">
 
 ### resources/views/task/create.blade.php: Vista para la creación de tareas.
 
