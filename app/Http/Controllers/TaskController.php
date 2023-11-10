@@ -34,18 +34,17 @@ namespace App\Http\Controllers;
             $task->save();
         
             Session::flash('success', 'La tarea se ha guardado exitosamente.');
-        
+            
             return redirect('/tasks');
         }
+
         
         
         
         public function edit($id)
         {
             $task = Task::find($id);
-            return view('task.edit', ['task' => $task]) ;
-            
-            
+            return view('task.edit', ['task' => $task]) ;   
         }
         
         public function update(Request $request, $id)

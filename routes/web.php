@@ -15,7 +15,7 @@ use App\Http\Controllers;
 */
 //Obtener Vista de Bienvenida 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/welcome');
 });
 
 //Ruta de Autentiacion

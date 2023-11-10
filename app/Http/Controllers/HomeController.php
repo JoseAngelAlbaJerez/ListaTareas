@@ -28,6 +28,7 @@ class HomeController extends Controller
     $tasks = Task::all();
     return view('home', ['tasks' => $tasks]);
 }
+   
 
   
 }

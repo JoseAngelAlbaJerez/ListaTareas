@@ -28,7 +28,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-success" style="margin-top: 10px;">{{ __('Actualizar Tarea') }}</button>
-                        <a href="{{ route('tasks') }}" class="btn btn-danger" style="margin-top: 10px;">Cancelar</a>
+                        <a href="{{ route('home') }}" class="btn btn-danger" style="margin-top: 10px;">Cancelar</a>
                     </form>
                 </div>
             </div>

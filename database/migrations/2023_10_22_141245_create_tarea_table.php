@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->boolean('completed')->default(false);
+            $table->tinyInteger('completed')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
