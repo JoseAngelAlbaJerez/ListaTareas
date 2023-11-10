@@ -7,26 +7,27 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Ejecuta las migraciones.
      */
     public function up(): void
     {
+        // Crea la tabla 'tasks' con los campos necesarios
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->tinyInteger('completed')->default(0);
-            $table->unsignedBigInteger('user_id');
-            $table->timestamps();
-
+            $table->id(); // Campo de identificación único
+            $table->string('title'); // Campo para el título de la tarea
+            $table->text('description')->nullable(); // Campo para la descripción de la tarea (puede ser nulo)
+            $table->tinyInteger('completed')->default(0); // Campo para indicar si la tarea está completada (valor predeterminado: 0)
+            $table->unsignedBigInteger('user_id'); // Clave foránea que referencia al ID del usuario asociado
+            $table->timestamps(); // Campos para las marcas de tiempo de creación y actualización
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Revierte las migraciones.
      */
     public function down(): void
     {
-        Schema::dropIfExists('tarea');
+        // Elimina la tabla 'tasks'
+        Schema::dropIfExists('tasks');
     }
 };
