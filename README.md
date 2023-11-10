@@ -27,7 +27,7 @@ Generación de archivos de Bootstrap con
 <img src="img\login.png">
 
 ## Register
-<img src="img\register.png">
+<img src="img\Register.png">
 
 
 
